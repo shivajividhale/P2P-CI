@@ -1,5 +1,6 @@
 __author__ = 'Shivaji'
 import socket
+import time
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 print(s)
@@ -18,6 +19,7 @@ sd.connect(('localhost', int(ack)))
 print(sd)
 rfc_list = "123 456 632"
 sd.send(bytes(rfc_list,'UTF-8'))
+time.sleep(5)
 sd.send(bytes("2nd transfer",'UTF-8'))
 print("Sent 2nd trnasfer")
 sd.send(bytes("3rd transfer",'UTF-8'))
