@@ -18,4 +18,6 @@ sd.connect(('localhost', int(ack)))
 print(sd)
 rfc_list = "123 496 612"
 sd.send(bytes(rfc_list,'UTF-8'))
+sd.send(bytes("2nd transfer",'UTF-8'))
+print("Sent 2nd trnasfer")
 

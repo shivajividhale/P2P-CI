@@ -6,15 +6,20 @@ def make_connection( port, addr):
     sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     sock.bind(('localhost',server_port))
     sock.listen(1)
+    (client_socket, client_addr) = sock.accept()
     while True:
-        (client_socket, client_addr) = sock.accept()
+        #print(client_addr)
         rfc_list = client_socket.recv(100)
-        print("Hi: "+str(client_addr))
-        print(rfc_list.decode("UTF-8"))
+        if rfc_list:
+            print("Hi: "+str(client_addr))
+            print(rfc_list.decode("UTF-8"))
         #client_socket.listen(1)
         #while True:
-        msg = client_socket.recv(100)
-        print(msg.decode('UTF-8'))
+        #msg = client_socket.recv(100)
+        #if not msg:
+        #    break
+
+        #print(msg.decode('UTF-8'))
 
 s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 s.bind(('localhost',7734))
