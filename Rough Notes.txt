@@ -1,0 +1,5 @@
+Central server:
+Listening on well-known port
+Keeps information of:
+1. active peers
+2. index of rfc at each peer
